@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>优酷首页</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <link rel="stylesheet" href="css/index.css">
+
+</head>
+<body>
+  <div id="app">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" v-for="item in bannerList" :key="item.id">
+          <img :src="item.path" alt="item.name">
+        </div>
+      </div>
+      <!--分页器-->
+      <div class="swiper-pagination"></div>
+      <!--自定义-分页器-->
+      <!-- <div class="swiper-pagination">
+        <div class="swiper-pagination-item" :class="activeBanner == index ? 'wiper-pagination-item-active' : ''" @click="paginationClick(index)" v-for="(item,index) in bannerList" :key="item.id">{{item.name}}</div>
+      </div> -->
+    </div>
+    <div class="item-title color1">精选热播</div>
+    <ul class="hot-video">
+      <li class="hot-video-item" v-for="item in hotVideo" :key="item.id">
+        <img :src="item.path" class="video-img" alt="item.name">
+        <div class="video-name ellipsis color1">{{item.name}}</div>
+        <div class="video-subName ellipsis color2">{{item.subName}}</div>
+      </li>
+    </ul>
+    <div class="item-title color1">好剧推荐</div>
+    <ul class="hot-video">
+      <li class="hot-video-item" v-for="item in hotVideo2" :key="item.id">
+        <img :src="item.path" class="video-img" alt="item.name">
+        <div class="video-name ellipsis color1">{{item.name}}</div>
+        <div class="video-subName ellipsis color2">{{item.subName}}</div>
+      </li>
+    </ul>
+  </div>
+
+  <script src="js/swiper.min.js"></script>
+  <script src="js/vue.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
